@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>android-shapes — generated decorative shape library</title>
+<meta name="description" content="Searchable library of procedurally generated decorative shapes with a hex color tray. Copy as SVG, Android VectorDrawable XML, or Jetpack Compose path.">
+<meta property="og:title" content="android-shapes">
+<meta property="og:description" content="50,000+ generated decorative shapes. Search, recolor, copy for Android.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'><path d='M100 12L176 144H24Z' fill='%236750A4'/></svg>">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <div class="brand">
+    <img class="logo" src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'><path d='M100 12L176 144H24Z' fill='%23D0BCFF'/></svg>" alt="">
+    <span><strong>android-shapes</strong></span>
+    <span id="meta" class="muted">loading index…</span>
+  </div>
+  <div class="search">
+    <input id="q" type="search" placeholder="Search — try  gear t12 · star slim · blob f23 · p7 · drop-0042" autocomplete="off" spellcheck="false">
+    <kbd>/</kbd>
+  </div>
+  <div id="chips" class="chips"></div>
+  <div class="tray">
+    <input id="color" type="color" value="#D0BCFF" aria-label="Shape color">
+    <input id="hex" type="text" value="#D0BCFF" maxlength="7" spellcheck="false" aria-label="Hex color">
+    <div id="swatches"></div>
+    <button id="rnd" title="Random color">Random</button>
+    <button id="bg" title="Toggle dark/light preview">◐</button>
+  </div>
+</header>
+<main id="main">
+  <div id="grid" class="grid" aria-live="polite"></div>
+  <div id="sentinel"></div>
+  <div id="empty" class="empty hidden">No shapes match that search.</div>
+</main>
+<footer>
+  <span id="shown"></span>
+  <span class="muted">click a shape to copy — SVG · Android XML · Compose · PNG</span>
+</footer>
+
+<div id="modal" class="modal hidden" role="dialog" aria-modal="true">
+  <div class="sheet">
+    <header>
+      <div id="big" class="big"></div>
+      <div class="minfo">
+        <h3 id="mid"></h3>
+        <p id="mtags"></p>
+      </div>
+      <button id="close" aria-label="Close">✕</button>
+    </header>
+    <div class="tabs" role="tablist">
+      <button data-t="svg" class="on" role="tab">SVG</button>
+      <button data-t="xml" role="tab">Android XML</button>
+      <button data-t="compose" role="tab">Compose</button>
+      <button data-t="path" role="tab">path data</button>
+    </div>
+    <pre><code id="code"></code></pre>
+    <div class="actions">
+      <button id="copy" class="primary">Copy code</button>
+      <a id="dlSvg" download="shape.svg" class="btn">Download .svg</a>
+      <a id="dlPng" download="shape.png" class="btn">Download .png</a>
+    </div>
+  </div>
+</div>
+<script src="app.js"></script>
+</body>
+</html>
