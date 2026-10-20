@@ -48,6 +48,16 @@ async function load() {
     f2.appendChild(b);
   }
   sw.appendChild(f2);
+  const params = new URLSearchParams(location.search);
+  const pq = params.get("q");
+  const pf = params.get("f");
+  const pc = params.get("c");
+  if (pq) qInput.value = pq;
+  if (pf && manifest.families.includes(pf)) {
+    activeFam = pf;
+    chips.querySelectorAll(".chip").forEach((c) => c.classList.toggle("on", c.dataset.fam === activeFam));
+  }
+  if (pc) setColor(pc);
   applyFilter();
 }
 

@@ -1,5 +1,13 @@
 # android-shapes
 
+**Live site → https://kavya-24.github.io/Android-Shapes/site/**
+
+| | |
+|---|---|
+| ![Gallery](docs/img/gallery.png) | ![Gears](docs/img/gear-teal.png) |
+
+_50,000 shapes · hex color tray · light/dark preview — every tile is a vector, no images stored_
+
 A generated library of **50,000 decorative vector shapes** (8 families × 6,250 variants) with a searchable, colorable gallery hosted on GitHub Pages. Every shape can be copied as:
 
 - **SVG** (any color)
@@ -18,6 +26,8 @@ node scripts/serve.mjs 8177       # local preview → http://localhost:8177/site
 ```
 
 Search works client-side over `data/manifest.json` (id + tags). Shapes load lazily from 250-shape shards, so the page stays fast even with tens of thousands of shapes.
+
+The page also reads shareable URL params: [`?f=gear&c=%234DB6AC`](https://kavya-24.github.io/Android-Shapes/site/?f=gear&c=%234DB6AC) pins a family (`f=`) and hex color (`c=`); `q=` pre-fills a search.
 
 ## Families
 
